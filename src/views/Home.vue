@@ -1,6 +1,7 @@
 <template>
   <div class="home" :style="sTop?'paddingTop:0':'paddingTop:80px'">
     <headers @getsTop="getsTop"></headers>
+    <el-button type="primary">主要按钮</el-button>
   </div>
 </template>
 
@@ -30,5 +31,9 @@ export default {
 <style lang="scss" scoped>
     .home{
       height: 1200px;
+      img{
+        width: 100px;
+        height: 100px;
+      }
     }
 </style>

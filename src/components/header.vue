@@ -1,7 +1,10 @@
 <template>
   <div :class="sTop?'headers':'fixed'">
-      <div class="left">ww</div> 
-      <div class="right">y</div>
+      <div class="left">
+          <img v-if="sTop" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2259502057,2983465487&fm=11&gp=0.jpg" alt="">
+          <img v-else src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1741926557,806234599&fm=26&gp=0.jpg" alt="">
+      </div> 
+      <div class="right"></div>
   </div>
 </template>
 
@@ -33,13 +36,11 @@ export default {
     .headers{
         background: black;
         height:80px;
-        opacity: 0.8;
-        color: #fff;
         position: relative;
         transition: .5s;
         div{
             height: 100%;
-            width: 100px;
+            width: 80px;
             text-align: center;
             line-height: 80px;
         }
@@ -47,6 +48,11 @@ export default {
             position: absolute;
             left:0;
             top:0;
+            img{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
         }
         .right{
             position: absolute;
@@ -55,10 +61,8 @@ export default {
         }
     }
     .fixed{
-        background: white;
         height:80px;
-        opacity: 0.5;
-        color: black;
+        background: rgba($color: rgb(255, 255, 255), $alpha: 0.5);
         position: fixed;
         top:0;
         bottom:0;
@@ -67,7 +71,7 @@ export default {
         box-shadow:0 2px 2px #ccc;
         div{
             height: 100%;
-            width: 100px;
+            width: 80px;
             text-align: center;
             line-height: 80px;
         }
@@ -75,6 +79,11 @@ export default {
             position: absolute;
             left:0;
             top:0;
+            img{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
         }
         .right{
             position: absolute;
