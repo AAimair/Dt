@@ -7,10 +7,10 @@
       <div class="right">
           <!-- <img class="menu" src="../assets/menu.png" alt=""> -->
           <ul v-if="menuShow">
-              <li>left</li>
-              <li>right</li>
-              <li>top</li>
-              <li>bottom</li>
+              <router-link tag="li" to="/Melliodas">Melliodas</router-link>
+              <router-link tag="li" to="/Elizabeth">Elizabeth</router-link>
+              <router-link tag="li" to="/Diana">Diana</router-link>
+              <router-link tag="li" to="/Sin">Sin</router-link>
           </ul>
           <i v-else class="el-icon-more" @click="showMenu" :style="menuStyle"></i>
       </div>
@@ -65,6 +65,7 @@ export default {
 
 <style lang="scss" scoped>
     .headers{
+        font-size: 14px;
         background: rgba($color: rgb(38,157,128), $alpha:1);;
         height:80px;
         position: relative;
@@ -72,18 +73,22 @@ export default {
         color: rgb(69,39,39);
         width: 100%;
         box-shadow:0 2px 2px #ccc;
-        li{
-            float: left;
-            padding: 10px;
-            cursor: pointer;
-            margin-right:10px;
-            &:nth-of-type(4){
-                margin-right:0;
+        ul{
+            width: 300px;
+            overflow: hidden;
+            li{
+                float: left;
+                padding: 10px;
+                cursor: pointer;
+                margin-right:10px;
+                &:nth-of-type(4){
+                    margin-right:0;
+                }
             }
         }
         div{
             height: 100%;
-            width: 80px;
+            width: 60px;
             text-align: center;
             line-height: 80px;
         }
@@ -102,19 +107,20 @@ export default {
             position: absolute;
             right:0;
             top:0;  
-            width: 23%;
+            width: 300px;
             .menu{
                 margin-top: 10px;
                 width: 30px;
                 height: 30px;
             }
              .el-icon-more{
-                margin-right: -10px;
+                margin-right: -200px !important;
             }
         }
     }
     .fixed{
         height:80px;
+        font-size: 14px;
         background: rgba($color: rgb(117, 27, 19), $alpha:1);
         position: fixed;
         top:0;
@@ -134,7 +140,7 @@ export default {
         }
         div{
             height: 100%;
-            width: 80px;
+            width: 60px;
             text-align: center;
             line-height: 80px;
         }
@@ -153,12 +159,9 @@ export default {
             position: absolute;
             right:0;
             top:0;  
-            width: 23%;
-             img{
-                margin-top: 10px;
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
+            width: 300px;
+             .el-icon-more{
+                margin-right: -200px !important;
             }
         }
     }

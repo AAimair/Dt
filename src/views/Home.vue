@@ -1,7 +1,12 @@
 <template>
-  <div class="home" :style="sTop?'paddingTop:0':'paddingTop:80px'">
+  <div class="home" :style="sTop?'paddingTop:0':'paddingTop:160px'">
     <headers @getsTop="getsTop"></headers>
-    <!-- <el-button type="primary">主要按钮</el-button> -->
+    <div class="content">
+      <!-- <transition 
+        > -->
+        <router-view></router-view>
+      <!-- </transition> -->
+    </div>
   </div>
 </template>
 
@@ -31,6 +36,9 @@ export default {
 <style lang="scss" scoped>
     .home{
       height: 1200px;
+      .content{
+        padding:10px;
+      }
       img{
         width: 100px;
         height: 100px;

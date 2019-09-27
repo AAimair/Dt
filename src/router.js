@@ -14,15 +14,13 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      children:[
+        {path: '/sin',name: 'sin',component: () => import('./views/sin.vue')},
+        {path: '/Melliodas',name: 'Melliodas',component: () => import('./views/Melliodas.vue')},
+        {path: '/Elizabeth',name: 'Elizabeth',component: () => import('./views/Elizabeth.vue')},
+        {path: '/Diana',name: 'Diana',component: () => import('./views/Diana.vue')}
+      ]
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    // }
   ]
 })

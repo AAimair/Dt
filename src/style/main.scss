@@ -1,4 +1,6 @@
 @import "./reset.scss";
-html{
-    background:rgb(107, 191, 151)
+@import "./animate.css";
+html,body{
+    background:rgb(107, 191, 151);
+    width:100%
 }
