@@ -4,7 +4,16 @@
           <img v-if="sTop" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2259502057,2983465487&fm=11&gp=0.jpg" alt="">
           <img v-else src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1741926557,806234599&fm=26&gp=0.jpg" alt="">
       </div> 
-      <div class="right"></div>
+      <div class="right">
+          <!-- <img class="menu" src="../assets/menu.png" alt=""> -->
+          <ul v-if="menuShow">
+              <li>left</li>
+              <li>right</li>
+              <li>top</li>
+              <li>bottom</li>
+          </ul>
+          <i v-else class="el-icon-more" @click="showMenu" :style="menuStyle"></i>
+      </div>
   </div>
 </template>
 
@@ -13,12 +22,27 @@ export default {
     data() {
         return {
             sTop:true,
+            menuShow:true,
+            menuStyle:{
+                display:'inline-block',
+                marginRight:'-40px',
+                textAlgin:'center',
+                lineHight:'80px',
+                cursor: 'pointer'
+            }
         }
     },
     methods: {
-
+        showMenu(){
+            // this.
+        }
     },
     created() {
+        if(document.documentElement.clientWidth<600){
+            this.menuShow = false
+        }else{
+            this.menuShow = true
+        }
         let _this = this
         window.addEventListener("scroll", function () {
             if(document.documentElement.scrollTop>=80){
@@ -28,16 +52,35 @@ export default {
             }
             _this.$emit('getsTop',_this.sTop)
         })
+        window.addEventListener('resize',()=>{
+            if(document.documentElement.clientWidth<600){
+                this.menuShow = false
+            }else{
+                this.menuShow = true
+            }
+        })
     },
 }
 </script>
 
 <style lang="scss" scoped>
     .headers{
-        background: black;
+        background: rgba($color: rgb(38,157,128), $alpha:1);;
         height:80px;
         position: relative;
         transition: .5s;
+        color: rgb(69,39,39);
+        width: 100%;
+        box-shadow:0 2px 2px #ccc;
+        li{
+            float: left;
+            padding: 10px;
+            cursor: pointer;
+            margin-right:10px;
+            &:nth-of-type(4){
+                margin-right:0;
+            }
+        }
         div{
             height: 100%;
             width: 80px;
@@ -49,6 +92,7 @@ export default {
             left:0;
             top:0;
             img{
+                margin-top: 10px;
                 width: 60px;
                 height: 60px;
                 border-radius: 50%;
@@ -57,18 +101,37 @@ export default {
         .right{
             position: absolute;
             right:0;
-            top:0;    
+            top:0;  
+            width: 23%;
+            .menu{
+                margin-top: 10px;
+                width: 30px;
+                height: 30px;
+            }
+             .el-icon-more{
+                margin-right: -10px;
+            }
         }
     }
     .fixed{
         height:80px;
-        background: rgba($color: rgb(255, 255, 255), $alpha: 0.5);
+        background: rgba($color: rgb(117, 27, 19), $alpha:1);
         position: fixed;
         top:0;
         bottom:0;
         width: 100%;
+        color: white;
         transition: .5s;
         box-shadow:0 2px 2px #ccc;
+        li{
+            float: left;
+            padding: 10px;
+            cursor: pointer;
+            margin-right:10px;
+            &:nth-of-type(4){
+                margin-right:0;
+            }
+        }
         div{
             height: 100%;
             width: 80px;
@@ -80,6 +143,7 @@ export default {
             left:0;
             top:0;
             img{
+                margin-top: 10px;
                 width: 60px;
                 height: 60px;
                 border-radius: 50%;
@@ -88,7 +152,14 @@ export default {
         .right{
             position: absolute;
             right:0;
-            top:0;    
+            top:0;  
+            width: 23%;
+             img{
+                margin-top: 10px;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
         }
     }
 </style>

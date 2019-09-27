@@ -1,7 +1,7 @@
 <template>
   <div class="home" :style="sTop?'paddingTop:0':'paddingTop:80px'">
     <headers @getsTop="getsTop"></headers>
-    <el-button type="primary">主要按钮</el-button>
+    <!-- <el-button type="primary">主要按钮</el-button> -->
   </div>
 </template>
 
