@@ -1,17 +1,19 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store/store'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store/store";
 
-Vue.config.productionTip = false
-import axios from "axios"
-import "./style/main.scss"
-import 'element-ui/lib/theme-chalk/display.css';
+Vue.config.productionTip = false;
+import axios from "axios";
+import "./style/main.scss";
+import "element-ui/lib/theme-chalk/display.css";
 
-Vue.prototype.$http = axios
+Vue.prototype.$http = axios;
 
 new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app");
+//重复点击出现的蓝色区域
+document.onselectstart = new Function("return false");

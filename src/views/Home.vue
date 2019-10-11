@@ -1,5 +1,5 @@
 <template>
-  <div class="home" :style="sTop?'paddingTop:0':'paddingTop:160px'">
+  <div class="home" :style="sTop?'paddingTop:0':'paddingTop:180px'">
     <headers @getsTop="getsTop"></headers>
     <div class="content">
       <!-- <transition 
