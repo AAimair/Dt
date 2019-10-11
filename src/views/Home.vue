@@ -3,8 +3,8 @@
     <headers @getsTop="getsTop"></headers>
     <div class="content">
       <!-- <transition 
-        > -->
-        <router-view></router-view>
+      >-->
+      <router-view></router-view>
       <!-- </transition> -->
     </div>
   </div>
@@ -12,36 +12,35 @@
 
 <script>
 // @ is an alias to /src
-import headers from "../components/header"
+import headers from "../components/header";
 export default {
-  name: 'home',
+  name: "home",
   components: {
     headers
   },
   data() {
     return {
-      sTop:true
-    }
+      sTop: true
+    };
   },
-  created() {
-  },
+  created() {},
   methods: {
-    getsTop(val){
-      this.sTop = val
+    getsTop(val) {
+      this.sTop = val;
     }
-  },
-}
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-    .home{
-      height: 1200px;
-      .content{
-        padding:10px;
-      }
-      img{
-        width: 100px;
-        height: 100px;
-      }
-    }
+.home {
+  height: 1200px;
+  .content {
+    padding: 10px;
+  }
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
 </style>

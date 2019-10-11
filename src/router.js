@@ -13,9 +13,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect:'/Melliodas',
       name: 'home',
       component: Home,
       children:[
+
         {path: '/sin',name: 'sin',component: () => import('./views/sin.vue')},
         {path: '/Melliodas',name: 'Melliodas',component: () => import('./views/Melliodas.vue')},
         {path: '/Elizabeth',name: 'Elizabeth',component: () => import('./views/Elizabeth.vue')},
