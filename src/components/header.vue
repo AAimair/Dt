@@ -138,6 +138,7 @@ export default {
   top: 0;
   bottom: 0;
   width: 100%;
+  z-index: 1000;
   color: white;
   transition: 0.5s;
   box-shadow: 0 2px 2px #ccc;
