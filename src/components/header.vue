@@ -79,7 +79,7 @@ export default {
   position: relative;
   transition: 0.5s;
   color: rgb(69, 39, 39);
-  width: 100%
+  width: 100%;
   box-shadow: 0 2px 2px #ccc;
   ul {
     width: 300px;
