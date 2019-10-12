@@ -1,6 +1,6 @@
 <template>
   <div class="melliodas">
-    <el-button type="primary" @click="submit">提交</el-button>
+    <el-button type="primary" @click="submit" :disabled="multipleSelection.length===0?true:false">提交</el-button>
     <el-table
       ref="multipleTable"
       :data="tableData"
