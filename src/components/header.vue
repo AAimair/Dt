@@ -80,7 +80,7 @@ export default {
   transition: 0.5s;
   color: rgb(69, 39, 39);
   width: 100%;
-  box-shadow: 0 2px 2px #ccc;
+  box-shadow: 0 2px 2px #000000;
   ul {
     width: 300px;
     overflow: hidden;
@@ -141,7 +141,7 @@ export default {
   z-index: 1000;
   color: white;
   transition: 0.5s;
-  box-shadow: 0 2px 2px #ccc;
+  box-shadow: 0 2px 2px #000000;
   .router-link-exact-active {
     color: rgb(38, 157, 128);
   }
