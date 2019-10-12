@@ -62,6 +62,9 @@ export default {
       multipleSelection: []
     };
   },
+  created() {
+    console.log;
+  },
   methods: {
     submit() {
       console.log(this.multipleSelection);
@@ -74,6 +77,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.melliodas {
-}
 </style>
