@@ -8,7 +8,7 @@
       style="width: 100%;margin-top:10px;"
       @selection-change="handleSelectionChange"
     >
-      <el-table-column type="selection" width="55"></el-table-column>
+      <el-table-column type="selection" width="55" style="border:green 1px solid"></el-table-column>
       <el-table-column label="日期" width="120">
         <template slot-scope="scope">{{ scope.row.date }}</template>
       </el-table-column>

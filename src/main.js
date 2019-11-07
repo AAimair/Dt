@@ -17,3 +17,16 @@ new Vue({
 }).$mount("#app");
 //重复点击出现的蓝色区域
 document.onselectstart = new Function("return false");
+//登录状态跳转
+router.beforeEach((to, from, next) => {
+  let user = sessionStorage.getItem("user");
+  if (to.meta.requireAuth) {
+    // 判断该路由是否需要登录权限
+    if (user) {
+      next();
+    } else {
+    }
+  } else {
+    next(); //如果跳转的路由无需登录验证，直接放行
+  }
+});

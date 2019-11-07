@@ -1,13 +1,7 @@
 <template>
   <div class="Elizabeth">
     <p>Elizabeth</p>
-    <el-tag
-      v-for="(item,index) of list"
-      :key="item.id"
-      @click="change(index)"
-      style="margin-right: 10px; cursor: pointer;"
-      :effect="active==index?'dark':'plain'"
-    >{{item.name}}</el-tag>
+
   </div>
 </template>
 
@@ -26,8 +20,9 @@ export default {
     };
   },
   methods: {
-    change(val) {
+    change(val, e) {
       this.active = val;
+      console.log(e);
     }
   }
 };

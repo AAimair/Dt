@@ -13,7 +13,7 @@ export default new Router({
   routes: [
     {
       path: "/",
-      redirect: "/Melliodas",
+      redirect: "/login",
       name: "home",
       component: Home,
       children: [
@@ -25,6 +25,9 @@ export default new Router({
         {
           path: "/Melliodas",
           name: "Melliodas",
+          meta: {
+            requireAuth: true
+          },
           component: () => import("./views/Melliodas.vue")
         },
         {
@@ -38,6 +41,11 @@ export default new Router({
           component: () => import("./views/Diana.vue")
         }
       ]
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: () => import("./views/login.vue")
     }
   ]
 });

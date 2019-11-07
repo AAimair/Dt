@@ -2,16 +2,19 @@
   <div :class="sTop?'headers':'fixed'">
     <div class="left">
       <img
+        @click="exit"
         v-if="sTop"
         src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2259502057,2983465487&fm=11&gp=0.jpg"
         alt
       />
       <img
+        @click="exit"
         v-else
         src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1741926557,806234599&fm=26&gp=0.jpg"
         alt
       />
     </div>
+    <span class="user">{{user}}</span>
     <div class="right">
       <!-- <img class="menu" src="../assets/menu.png" alt=""> -->
       <ul v-if="menuShow">
@@ -36,16 +39,22 @@ export default {
         marginRight: "-40px",
         textAlgin: "center",
         lineHight: "80px",
-        cursor: "pointer"
+        cursor: "pointer",
+        user: ""
       }
     };
   },
   methods: {
     showMenu() {
       // this.
+    },
+    exit() {
+      sessionStorage.removeItem("user");
+      this.$router.push("/login");
     }
   },
   created() {
+    this.user = sessionStorage.getItem("user");
     if (document.documentElement.clientWidth < 600) {
       this.menuShow = false;
     } else {
@@ -81,6 +90,13 @@ export default {
   color: rgb(69, 39, 39);
   width: 100%;
   box-shadow: 0 2px 3px #000000;
+  .user {
+    position: absolute;
+    top: 30px;
+    left: 80px;
+    font-weight: 600;
+    font-size: 20px;
+  }
   ul {
     width: 300px;
     overflow: hidden;
@@ -113,6 +129,9 @@ export default {
       height: 60px;
       border-radius: 50%;
       margin-left: 10px;
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
   .right {
@@ -142,6 +161,13 @@ export default {
   color: white;
   transition: 0.5s;
   box-shadow: 0 2px 3px #000000;
+  .user {
+    position: absolute;
+    top: 30px;
+    left: 80px;
+    font-weight: 600;
+    font-size: 20px;
+  }
   .router-link-exact-active {
     color: rgb(38, 157, 128);
   }
@@ -170,6 +196,9 @@ export default {
       height: 60px;
       border-radius: 50%;
       margin-left: 10px;
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
   .right {
